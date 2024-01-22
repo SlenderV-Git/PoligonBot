@@ -1,4 +1,5 @@
 import asyncio
+import sqlite3
 
 from config.config import Config, load_config
 from aiogram import Bot, Dispatcher
