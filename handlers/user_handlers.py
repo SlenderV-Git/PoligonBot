@@ -16,8 +16,7 @@ from services.file_handlers import book
 from services.db_services import (give_users_list,
                                   set_user_data, 
                                   set_data,
-                                  get_data,
-                                  create_bookmarks)
+                                  get_data,)
 
 router = Router()
 DB_PATH = 'database/users.db'
@@ -29,7 +28,6 @@ DB_PATH = 'database/users.db'
 async def process_start_command(message: Message):
     await message.answer(LEXICON[message.text])
     if message.from_user.id not in give_users_list(DB_PATH):
-        create_bookmarks(DB_PATH)
         set_user_data(DB_PATH, message)
         
 # Этот хэндлер будет срабатывать на команду "/help"
